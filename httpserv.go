@@ -20,6 +20,7 @@ func Handler(w http.ResponseWriter, req *http.Request) {
 		err = ioutil.WriteFile("p.html", data, 0666)
 		if err != nil {panic(err) }	
 		res.Body.Close()
+		io.WriteString(w, "successful get")
 	} 
 	if req.Method == "POST" {
 		io.WriteString(w, "successful post")
